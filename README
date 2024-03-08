@@ -1,4 +1,8 @@
-# 网络环境配置
+# Firewall
+
+## Requirement
+
+### Environment
 
 内网与防火墙主机为虚拟机；外网主机为物理机。
 
@@ -6,7 +10,7 @@
 
 
 
-### 防火墙配置
+### Firewall Configuration
 
 开启ip转发。
 
@@ -20,7 +24,7 @@ sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 
 
 
-### 内网主机
+### Intranet Host Configuration
 
 配置默认路由，使得防火墙内网IP为默认网关，通信需走防火墙。
 
@@ -28,7 +32,7 @@ sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 sudo route add default gw 192.168.192.130 eth0    
 ```
 
-### 外网主机
+### Extranet Host Configuration
 
 配置默认路由，使得外网与内网通信均需经过防火墙。
 
@@ -39,7 +43,7 @@ route add -p 192.168.192.0 mask 255.255.255.0 192.168.147.143 metric 2
 
 
 
-# 代码使用
+## Installation
 
 源代码放在Ubuntu16虚拟机。
 
